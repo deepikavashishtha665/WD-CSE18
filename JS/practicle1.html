@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marks Analysis</title>
+</head>
+<body>
+
+<script>
+// Input number of subjects
+let n = parseInt(prompt("Enter number of subjects:"));
+
+let marks = [];
+
+// Input marks
+for (let i = 0; i < n; i++) {
+    let m = parseFloat(prompt("Enter marks of subject " + (i + 1) + ":"));
+    marks.push(m);
+}
+
+// Initialize variables
+let sum = 0;
+let max = marks[0];
+let min = marks[0];
+
+// Loop for calculations
+for (let i = 0; i < marks.length; i++) {
+    sum += marks[i];
+
+    if (marks[i] > max) {
+        max = marks[i];
+    }
+
+    if (marks[i] < min) {
+        min = marks[i];
+    }
+}
+
+// Average
+let avg = sum / marks.length;
+
+// Output
+document.write("<h2>Result</h2>");
+document.write("Marks: " + marks.join(", ") + "<br>");
+document.write("Total Marks: " + sum + "<br>");
+document.write("Average Marks: " + avg + "<br>");
+document.write("Highest Marks: " + max + "<br>");
+document.write("Lowest Marks: " + min + "<br>");
+</script>
+
+</body>
+</html>
